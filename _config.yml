@@ -1,0 +1,7 @@
+permalinks: pretty
+sass:
+    style: expanded
+collections:
+  libraries:
+    output: true
+    permalink: /:collection/:path/
