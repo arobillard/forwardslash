@@ -11,5 +11,8 @@
     &, a {
       color: $color-secondary-light;
     }
+    a:hover, a:focus {
+      color: #fff;
+    }
   }
 }
