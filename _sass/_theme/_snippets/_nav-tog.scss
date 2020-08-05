@@ -1,0 +1,45 @@
+.nav-toggle {
+  width: calc(1rem / 4 * 7.5 * var(--type-responsive-growth));
+  height: calc(1rem / 4 * 5 * var(--type-responsive-growth));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .tog {
+    width: 100%;
+    height: calc(1rem / 5 * var(--type-responsive-growth));
+    background-color: #fff;
+    position: relative;
+    transition:
+      top var(--transition) cubic-bezier(.58,-0.35,.42,1.35),
+      bottom var(--transition) cubic-bezier(.58,-0.35,.42,1.35),
+      transform var(--transition) cubic-bezier(.58,-0.35,.42,1.35),
+      background-color var(--transition) cubic-bezier(.58,-0.35,.42,1.35),
+      color var(--transition) cubic-bezier(.58,-0.35,.42,1.35);
+  }
+  .top {
+    top: 0;
+  }
+  .bottom {
+    bottom: 0;
+  }
+  &-transition {
+    .top {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .bottom {
+      bottom: 50%;
+      transform: translateY(50%);
+    }
+  }
+  &-open {
+    .top {
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+    }
+    .bottom {
+      bottom: 50%;
+      transform: translateY(50%) rotate(-45deg);
+    }
+  }
+}

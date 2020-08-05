@@ -1,0 +1,19 @@
+<section class="banner-hero">
+  <div class="wrapper banner-content gutter">
+    {%- if page.url == '/' -%}
+      <h2 class="headline">
+    {%- else -%}
+      <h1 class="headline">
+    {%- endif -%}
+      {{ include.headline | default: "Lorem ipsum sit dolor." }}
+    {%- if page.url == '/' -%}
+      </h2>
+    {%- else -%}
+      </h1>
+    {%- endif -%}
+    <p class="byline">{{ include.byline | default: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quo culpa neque debitis harum. Aspernatur fugit quaerat iusto recusandae odio suscipit nesciunt quo ducimus?" }}</p>
+    <div class="btn-wrap">
+      <a href="{{ include.btnUrl | default: '#' }}" class="btn secondary medium" role="button">{{ include.btnText | default: 'Learn more' }}</a>
+    </div>
+  </div>
+</section>

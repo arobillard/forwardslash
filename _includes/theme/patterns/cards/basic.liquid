@@ -1,0 +1,10 @@
+<div class="card{% if include.data.class %} {{ include.data.class }}{% endif %}">
+  <div class="embed-4by3">
+    <img src="{{ include.data.src | default: 'https://placedog.net/500' }}" alt="{{ include.data.title }}">
+  </div>
+  <div class="card-content island">
+    <{{ include.data.titleTage | default: 'h3' }} class="card-title push-1-2">{{ include.data.title }}</{{ include.data.titleTage | default: 'h3' }}>
+    <p class="push-1-2">{{ include.data.text }}</p>
+    {% include theme/patterns/buttons/basic.liquid data=include.data.btn %}
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<header class="masthead basic" role="banner">
+  <a class="logo" href="{{site.baseurl}}/">
+    <strong>{{ include.data.title | default: "F/S Libraries" }}</strong>  
+  </a>
+  <nav id="nav" class="nav">
+    <ul>{% for link in include.data.links %}
+      <li>
+        <a href="{{ link.url }}"{% if link.current %} aria-current="page"{% endif %}>
+          <i class="icon i-1 push-r-1-2">
+            <svg><use xlink:href="{{site.baseurl}}/images/icons.svg#{{ link.icon }}" /></svg>
+          </i>
+          <span class="icon-label">{{ link.text }}</span>
+        </a>
+      </li>{% endfor %}
+    </ul>
+  </nav>
+  <ul class="icon-list">
+    <li>
+      <a class="icon-link" href="{{ include.data.iconLink }}" target="_blank">
+        <i class="icon i-1-1-4">
+          <svg><use xlink:href="{{site.baseurl}}/images/icons.svg#{{ include.data.icon | default: 'github' }}" /></svg>
+        </i>
+        <span class="icon-label hidden">{{ include.data.icon | default: 'github' | capitalize }}</span>
+      </a>
+    </li>
+  </ul>
+  <div class="nav-toggle-wrap">
+    {% include theme/snippets/nav-toggle.liquid %}
+  </div>
+</header>

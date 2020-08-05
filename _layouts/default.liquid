@@ -2,15 +2,28 @@
 <html lang="en-ca">
 <head>
   <meta charset="utf-8">
-  <title>{% if page.title %}{{ page.title | escape }} · {% endif %}Forward Slash</title>
+  <title>{% if page.title %}{{ page.title | escape }} · {% endif %}Forward Slash Libraries</title>
   <meta name="handheldfriendly" content="true">
   <meta name="mobileoptimized" content="240">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link href="{{site.baseurl}}/css/main.css" rel="stylesheet">
+  <link rel="shortcut icon" href="{{site.baseurl}}/favicon.ico"/>
 </head>
-<body>
-  {% include site/header.liquid %}
-  {{content}}
-  {% include site/footer.liquid %}
+<body id="top">
+
+  {% include theme/snippets/skip-links.liquid %}
+
+  {% include theme/patterns/header.liquid %}
+
+  <main id="main" role="main">
+    {{content}}
+  </main>
+
+  {% include theme/patterns/footer.liquid %}
+  
+  <script src="{{site.baseurl}}/js/main.js"></script>
+  {% if page.js %}
+    <script src="{{site.baseurl}}/js/{{ page.js }}.js"></script>
+  {% endif %}
 </body>
 </html>

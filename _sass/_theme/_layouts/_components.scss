@@ -1,0 +1,42 @@
+.component-examples {
+  // padding: calc(1rem * var(--line-height));
+  background-color: #fafafa;
+  border: 1px solid var(--color-primary-pale);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-light);
+  .output {
+    padding: calc(.5rem * var(--line-height));
+  }
+  .code {
+    padding: calc(.5rem * var(--line-height));
+    margin: 0;
+    background-color: #f2f2f2;
+    color: var(--color-primary);
+    max-width: 100%;
+    overflow-x: scroll;
+  }
+  code {
+    display: block;
+    // width: 100%;
+    // overflow: scroll;
+  }
+  code:not(:last-child) {
+    margin-bottom: calc(.5rem * var(--line-height));
+  }
+}
+
+.component-examples {
+  .masthead {
+    position: static!important;
+  }
+  .btn + .btn,
+  .btn + button,
+  button + .btn,
+  button + button {
+    margin: 0;
+  }
+  .btn, button {
+    margin: 0 calc(.25rem * var(--line-height)) calc(.25rem * var(--line-height)) 0!important; 
+  }
+}
+

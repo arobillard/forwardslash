@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<div class="grid-docs">
+  <div class="nav-docs-wrap">
+    {% include theme/snippets/nav-docs.liquid %}
+  </div>
+  <div id="docs-content" class="docs-content">
+    {{ content }}
+  </div>
+  <div class="nav-page-wrap">
+    <a class="nav-page-title block weight-medium text-upper" href="#top">{{ page.title }}</a>
+    <nav class="nav-page">
+      <ol class="list-group">
+      </ol>
+    </nav>
+  </div>
+</div>

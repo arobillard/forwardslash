@@ -1,0 +1,6 @@
+<a href="{{ include.data.url | default: '#' }}" class="{{ include.data.class | append: ' btn' }}" role="button">
+  <i class="icon i-1 push-r-1-2">
+    <svg><use xlink:href="{{site.baseurl}}/images/icons.svg#{{ include.data.icon | default: 'github' }}" /></svg>
+  </i>
+  <span class="icon-label">{{ include.data.text | default: 'Icon Button' }}</span>
+</a>

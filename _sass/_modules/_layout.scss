@@ -1,0 +1,66 @@
+/* - - - - - - - - - - Wrappers - - - - - - - - - - */
+
+[class^="wrapper"] {
+  margin: 0 auto;
+  max-width: 75em;
+  width: 100%;
+}
+
+.wrapper-text {
+  max-width: 40em;
+}
+
+.wrapper-text-no-center {
+  @extend .wrapper-text;
+  margin: 0;
+}
+
+/* - - - - - - - - - - Display & Position - - - - - - - - - - */
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}
+
+.hidden {
+  display: none;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.relative {
+  position: relative;
+}
+
+.static {
+  position: static;
+}
+
+.s-0 {
+  display: none;
+}
+
+@media only screen and (min-width: 38em) {
+
+  .m-0 {
+    display: none;
+  }
+
+  .m-1 {
+    display: initial;
+  }
+
+}

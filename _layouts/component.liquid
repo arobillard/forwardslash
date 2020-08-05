@@ -1,0 +1,38 @@
+---
+layout: docs
+---
+<artcile class="component-content">
+  <div class="component-content-header">
+    <h1 class="push-1-2">{{ page.title }}</h1>
+    <p>{{ page.intro | markdownify }}</p>
+  </div>
+  <div class="component-content-sections">
+    {% for section in page.sections %}
+      <section class="component-content-section section-{{ section.type }} pad-t">
+        {% include theme/patterns/headings/linked.liquid text=section.title level=2 %}
+        {{ section.description | markdownify }}
+        {% if section.examples %}
+          <div class="component-examples">
+            <div class="output">
+              {% for example in section.examples %}
+                {% if example.width %}
+                  <div style="max-width: {{ example.width }}rem;">
+                {% endif %}
+                  {% include {{ example.component }} data=example %}
+                {% if example.width %}
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+            <pre class="code">
+              {%- for example in section.examples -%}
+                <code class="language-html click-to-copy" data-lang="html">{%- capture code -%}{%- include {{ example.component }} data=example -%}{%- endcapture -%}{{- code | replace:"<","&lt;" | replace:">","&gt;" -}}</code>
+              {%- endfor -%}
+            </pre>
+          </div>  
+        {% endif %}
+      </section>
+    {% endfor %}
+  </div>
+  {{ content }}
+</article>

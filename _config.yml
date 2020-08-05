@@ -2,6 +2,6 @@ permalinks: pretty
 sass:
     style: expanded
 collections:
-  libraries:
+  components:
     output: true
-    permalink: /:collection/:path/
+    permalink: /documentation/:collection/:path/

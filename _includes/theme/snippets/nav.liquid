@@ -1,0 +1,20 @@
+<nav id="{{ include.id | default: 'nav'}}" class="{{ include.class | default: 'nav'}}" >
+    <ul>
+      <li>
+        <a href="{{site.baseurl}}/documentation"{% if page.url contains 'documentation' %} aria-current="page"{% endif %}>
+          <i class="icon i-1 push-r-1-2">
+            <svg><use xlink:href="{{site.baseurl}}/images/icons.svg#docs" /></svg>
+          </i>
+          <span class="icon-label">Documentation</span>
+        </a>
+      </li>
+      <li>
+        <a href="{{site.baseurl}}/libraries"{% if page.url contains 'libraries' %} aria-current="page"{% endif %}>
+          <i class="icon i-1 push-r-1-2">
+            <svg><use xlink:href="{{site.baseurl}}/images/icons.svg#library" /></svg>
+          </i>
+          <span class="icon-label">Libraries</span>
+        </a>
+      </li>
+    </ul>
+  </nav>

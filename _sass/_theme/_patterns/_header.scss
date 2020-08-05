@@ -1,0 +1,109 @@
+.masthead {
+  &.basic {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: stretch;
+    // justify-content: space-between;
+    background-color: var(--color-primary);
+    @include borderLeft(accent-3);
+    a:not(.nav-toggle) {
+      display: inline-block;
+      padding: calc(1rem * var(--line-height));
+      text-decoration: none;
+      color: #fff;
+      @include hov() {
+        background-color: var(--color-secondary);
+      }
+    }
+    .logo {
+      display: flex;
+      align-items: stretch;
+      h1, strong {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        @include typeScaleH5();
+      }
+    }
+    .nav,
+    .icon-list {
+      display: flex;
+      align-items: stretch;
+      ul {
+        display: flex;
+        align-items: stretch;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        display: flex;
+        align-items: stretch;
+      }
+      a {
+        display: flex;
+        align-items: center;
+        &[aria-current="page"] {
+          color: var(--color-accent-3);
+          @include hov() {
+            color: #fff;
+          }
+        }
+      }
+      // li:not(:last-child) {
+      //   margin-right: calc(1rem * var(--line-height) / 2);
+      // }
+    }
+    .icon-list {
+      margin-left: auto;
+    }
+    .nav-toggle-wrap {
+      display: none;
+    }
+    @media only screen and (max-width: 37.999em) {
+    
+      .nav {
+        position: absolute;
+        top: 0;
+        left: calc(-.5rem * var(--line-height));
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--color-primary);
+        @include borderLeft(accent-3);
+        z-index: -1;
+        padding-top: calc(4rem * var(--line-height));
+        transform: translateY(-100%);
+        transition:
+          transform var(--transition);
+        ul, li {
+          display: block;
+          width: 100%;
+        }
+        a {
+          display: block;
+          transform: translateX(3rem);
+          opacity: 0;
+          &.transitioned {
+            transform: translateX(0);
+            opacity: 1;
+          }
+        }
+      }
+      &.open .nav {
+        transform: translateY(0);
+      }
+
+      .nav-toggle-wrap {
+        display: flex;
+        align-items: center;
+        // margin-left: auto;
+        padding: 0 calc(1rem * var(--line-height));
+      }
+    
+    }
+  }
+}

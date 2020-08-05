@@ -1,0 +1,8 @@
+<ol class="skip-links">
+  <li><a href="#nav">Skip to Nav</a></li>
+  <li><a href="#main">Skip to Main</a></li>
+  {% if page.url contains 'documentation' %}
+  <li><a href="#nav-docs">Skip to Documentation Nav</a></li>
+  <li><a href="#doc-content">Skip to Documentation Content</a></li>
+  {% endif %}
+</ol>

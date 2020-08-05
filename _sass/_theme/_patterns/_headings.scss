@@ -1,0 +1,30 @@
+.heading-linked {
+  pointer-events: none;
+  margin-top: -7rem;
+  margin-bottom: calc(.5rem * var(--line-height));
+  &::before {
+    content: ' ';
+    display: block;
+    height: 7rem;
+    // background-color: red;
+  }
+  .heading-linked-content {
+    display: flex;
+    align-items: center;
+    pointer-events: auto;
+    a {
+      display: flex;
+      align-items: center;
+      opacity: 0;
+    }
+    @include hov() {
+      a {
+        opacity: .5;
+        @include hov() {
+          opacity: 1;
+          color: var(--color-accent-3)
+        }
+      }
+    }
+  }
+}

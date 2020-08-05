@@ -1,0 +1,29 @@
+<header class="masthead basic" role="banner">
+  <a class="logo" href="{{site.baseurl}}/">
+    {%- if page.url == '/' -%}
+      <h1>
+    {%- else -%}
+      <strong>  
+    {%- endif -%}
+      F/S Libraries
+    {%- if page.url == '/' -%}
+      </h1>
+    {%- else -%}
+      </strong>  
+    {%- endif -%}
+  </a>
+  {% include theme/snippets/nav.liquid class="nav" -%}
+  <ul class="icon-list">
+    <li>
+      <a class="icon-link" href="https://github.com/arobillard/forwardslash" target="_blank">
+        <i class="icon i-1-1-4">
+          <svg><use xlink:href="{{site.baseurl}}/images/icons.svg#github" /></svg>
+        </i>
+        <span class="icon-label hidden">Github</span>
+      </a>
+    </li>
+  </ul>
+  <div class="nav-toggle-wrap">
+    {% include theme/snippets/nav-toggle.liquid %}
+  </div>
+</header>

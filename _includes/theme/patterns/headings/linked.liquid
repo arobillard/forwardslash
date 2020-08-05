@@ -1,0 +1,10 @@
+<h{{ include.level }} id="{{ include.text | slugify }}" class="heading-linked">
+  <span class="heading-linked-content">
+    {{ include.text }}
+    <a href="#{{ include.text | slugify }}">
+      <i class="icon i-1-1-2 push-l-1-2">
+        <svg><use xlink:href="{{site.baseurl}}/images/icons.svg#link" /></svg>
+      </i>
+    </a>
+  </span>
+</h{{ include.level }}>

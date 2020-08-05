@@ -1,0 +1,141 @@
+.btn,
+button {
+  background-color: var(--color-primary);
+  color: #fff;
+  text-decoration: none;
+  font-family: inherit;
+  display: inline-block;
+  border: 2px solid var(--color-primary);
+  font-size: inherit;
+  padding: .45em 1em .5em;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition:
+    opacity var(--transition),
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition);
+  @include hov() {
+    background-color: var(--color-primary-light);
+    border-color: var(--color-primary-light);
+    color: #fff;
+  }
+}
+
+.btn + .btn,
+.btn + button,
+button + .btn,
+button + button {
+  margin-left: calc(.5rem * var(--line-height));
+}
+
+.btn.outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  box-shadow: none;
+  @include hov() {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+  }
+}
+
+.btn.secondary {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  @include hov() {
+    background-color: var(--color-secondary-light);
+    border-color: var(--color-secondary-light);
+  }
+}
+
+.btn.secondary.outline {
+  background-color: transparent;
+  color: var(--color-secondary);
+  box-shadow: none;
+  @include hov() {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: #fff;
+  }
+}
+
+.btn.accent-1 {
+  background-color: var(--color-accent-1);
+  border-color: var(--color-accent-1);
+  @include hov() {
+    background-color: var(--color-accent-1-light);
+    border-color: var(--color-accent-1-light);
+  }
+}
+
+.btn.accent-1.outline {
+  background-color: transparent;
+  color: var(--color-accent-1);
+  box-shadow: none;
+  @include hov() {
+    background-color: var(--color-accent-1);
+    border-color: var(--color-accent-1);
+    color: #fff;
+  }
+}
+
+.btn.accent-2 {
+  background-color: var(--color-accent-2);
+  border-color: var(--color-accent-2);
+  @include hov() {
+    background-color: var(--color-accent-2-light);
+    border-color: var(--color-accent-2-light);
+  }
+}
+
+.btn.accent-2.outline {
+  background-color: transparent;
+  color: var(--color-accent-2);
+  box-shadow: none;
+  @include hov() {
+    background-color: var(--color-accent-2);
+    border-color: var(--color-accent-2);
+    color: #fff;
+  }
+}
+
+.btn.accent-3 {
+  background-color: var(--color-accent-3);
+  border-color: var(--color-accent-3);
+  @include hov() {
+    background-color: var(--color-accent-3-light);
+    border-color: var(--color-accent-3-light);
+  }
+}
+
+.btn.accent-3.outline {
+  background-color: transparent;
+  color: var(--color-accent-3);
+  box-shadow: none;
+  @include hov() {
+    background-color: var(--color-accent-3);
+    border-color: var(--color-accent-3);
+    color: #fff;
+  }
+}
+
+.btn.xxxlarge {
+  @include typeScaleH1();
+}
+
+.btn.xxlarge {
+  @include typeScaleH2();
+}
+
+.btn.xlarge {
+  @include typeScaleH3();
+}
+
+.btn.large {
+  @include typeScaleH4();
+}
+
+.btn.medium {
+  @include typeScaleH5();
+}
