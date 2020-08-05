@@ -22,6 +22,9 @@
   {% include theme/patterns/footer.liquid %}
   
   <script src="{{site.baseurl}}/js/main.js"></script>
+  {% if page.url contains 'documentation' %}
+    <script src="{{site.baseurl}}/js/documentation.js"></script>
+  {% endif %}
   {% if page.js %}
     <script src="{{site.baseurl}}/js/{{ page.js }}.js"></script>
   {% endif %}

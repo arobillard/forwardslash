@@ -3,6 +3,10 @@ layout: default
 ---
 <div class="grid-docs">
   <div class="nav-docs-wrap">
+    <div class="nav-docs-toggle">
+      {% include theme/snippets/nav-toggle.liquid url="nav-docs" id="nav-toggle-docs" ariaLabel="Press to open documentation menu" %}
+      <strong class="block headline-5">Docs Menu</strong>
+    </div>
     {% include theme/snippets/nav-docs.liquid %}
   </div>
   <div id="docs-content" class="docs-content">

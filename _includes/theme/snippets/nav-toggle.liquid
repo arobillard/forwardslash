@@ -1,4 +1,4 @@
-<a class="nav-toggle" href="#nav-footer" aria-label="Press to open menu">
+<a id="{{ include.id | default: "nav-toggle-main" }}" class="nav-toggle" href="#{{ include.url | default: "nav" }}" aria-label="{{ include.ariaLabel | default: "Press to open main navigation" }}">
       <span class="tog top"></span>
       <span class="tog middle"></span>
       <span class="tog bottom"></span>

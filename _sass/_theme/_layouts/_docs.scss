@@ -1,14 +1,77 @@
 .grid-docs {
   @include borderLeft(secondary);
   width: 100vw;
+  .nav-docs-wrap {
+    padding: calc(1rem * var(--line-height));
+    .nav-docs-toggle {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--color-accent-3);
+      padding-bottom: calc(.5rem * var(--line-height));
+      .nav-toggle {
+        margin-right: calc(.5rem * var(--line-height));
+        .tog {
+          background-color: var(--color-primary);
+        }
+      }
+    }
+    .nav-docs {
+      height: 0;
+      overflow: hidden;
+      transition:
+        height var(--transition);
+      &.open {
+        height: var(--height);
+        overflow-y: scroll;
+      }
+      ul {
+        padding-top: calc(1rem * var(--line-height))
+      }
+      a {
+        text-decoration: none;
+        color: #000;
+        display: block;
+        padding: calc(.25rem * var(--line-height)) 0;
+        @include hov() {
+          color: var(--color-accent-3);
+        }
+      }
+      .nav-docs-section-title {
+        @include typeScaleH5();
+        color: var(--color-primary);
+        font-weight: 600;
+      }
+    }
+  }
   .nav-page-wrap {
     display: none;
+  }
+  .docs-content {
+    padding: calc(1rem * var(--line-height)) calc(1rem * var(--line-height));
+    h1 {
+      color: var(--color-accent-3);
+      // border-bottom: 1px solid var(--color-primary-pale);
+      position: relative;
+      &::after {
+        content: ' ';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 66.666%;
+        height: 1px;
+        background-color: var(--color-primary-pale);
+      }
+    }
   }
   @media only screen and (min-width: 50em) {
     display: grid;
     grid-template-columns: 15em auto;
     // column-gap: calc(1rem * var(--line-height));
     .nav-docs-wrap {
+      padding: 0;
+      .nav-docs-toggle {
+        display: none;
+      }
       .nav-docs {
         padding: calc(2rem * var(--line-height)) calc(1rem * var(--line-height));
         -webkit-position: sticky;
@@ -16,39 +79,12 @@
         top: 5rem;
         border-right: 1px solid var(--color-primary);
         overflow-y: scroll;
-        a {
-          text-decoration: none;
-          color: #000;
-          display: block;
-          padding: calc(.25rem * var(--line-height)) 0;
-          @include hov() {
-            color: var(--color-accent-3);
-          }
-        }
-        .nav-docs-section-title {
-          @include typeScaleH5();
-          color: var(--color-primary);
-          font-weight: 600;
-        }
+        max-height: none;
       }
     }
     .docs-content {
       --type-scale: 1.175;
       padding: calc(2rem * var(--line-height)) calc(2rem * var(--line-height));
-      h1 {
-        color: var(--color-accent-3);
-        // border-bottom: 1px solid var(--color-primary-pale);
-        position: relative;
-        &::after {
-          content: ' ';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 66.666%;
-          height: 1px;
-          background-color: var(--color-primary-pale);
-        }
-      }
     }
   }
   @media only screen and (min-width: 90em) {
