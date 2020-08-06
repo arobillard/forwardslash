@@ -17,17 +17,17 @@ const navLinks = Array.from(document.querySelectorAll('.nav > ul > li > a'));
 
 function closeNav(toggle, target) {
   console.log('close', toggle)
-  target.classList.remove('open');
-  toggle.classList.add('nav-toggle-transition');
-  toggle.classList.remove('nav-toggle-open');
   if (target.id === 'nav') {
     navLinks.forEach(link => {
       link.classList.remove('transitioned');
     });
   }
+  toggle.classList.add('nav-toggle-transition');
+  toggle.classList.remove('nav-toggle-open');
   setTimeout(() => {
     toggle.classList.remove('nav-toggle-transition');
     toggle.querySelector('.middle').removeAttribute('style');
+    target.classList.remove('open');
   }, 200)
 }
 
@@ -212,3 +212,61 @@ links && links.forEach(link => {
 // } else {
 // 	console.log('Not in the viewport... whomp whomp');
 // }
+
+// Color Theme Picker
+
+const ctp = document.querySelector('.color-theme-picker');
+const ctpOpener = ctp.querySelector('.ctp-opener');
+const ctpSelectors = ctp.querySelectorAll('.ctp-selector');
+
+ctpOpener.addEventListener('click', e => {
+  ctp.classList.toggle('open');
+});
+
+function themeSelector(theme) {
+  ctpSelectors.forEach(selector => {
+    selector.classList.remove('active');
+    if (theme === selector.dataset.theme) {
+      selector.classList.add('active');
+    }
+  })
+  body.classList.remove('retro');
+  body.classList.remove('earth-tones');
+  body.classList.add(theme);
+}
+
+function handleThemeSelector(e) {
+  const theme = e.currentTarget.dataset.theme;
+  themeSelector(theme);
+  ctp.classList.remove('open');
+  localStorage.setItem('color-theme', theme);
+}
+
+ctpSelectors.forEach(selector => selector.addEventListener('click', handleThemeSelector))
+
+function setCTOnLoad() {
+  const theme = localStorage.getItem('color-theme');
+  themeSelector(theme);
+}
+
+setCTOnLoad()
+
+function closeAll() {
+  ctp.classList.remove('open');
+}
+
+const main = document.querySelector('main')
+main.addEventListener('click', closeAll);
+
+// function mirrorToLocalStorage() {
+//   localStorage.setItem('items', JSON.stringify(items));
+// }
+
+function restoreFromLocalStorage() {
+  const lsItems = JSON.parse(localStorage.getItem('items'));
+  if (lsItems.length) {
+    items = lsItems;
+    // fire event
+    list.dispatchEvent(new CustomEvent('itemsUpdated'));
+  }
+}

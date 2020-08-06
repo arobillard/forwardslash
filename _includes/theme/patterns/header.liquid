@@ -13,7 +13,7 @@
     {%- endif -%}
   </a>
   {% include theme/snippets/nav.liquid class="nav" -%}
-  <ul class="icon-list">
+  <!-- <ul class="icon-list">
     <li>
       <a class="icon-link" href="https://github.com/arobillard/forwardslash" target="_blank">
         <i class="icon i-1-1-4">
@@ -22,7 +22,10 @@
         <span class="icon-label hidden">Github</span>
       </a>
     </li>
-  </ul>
+  </ul> -->
+  <div class="flex-center push-l-auto island-1-2">
+    {% include theme/patterns/color-theme-picker.liquid %}
+  </div>
   <div class="nav-toggle-wrap">
     {% include theme/snippets/nav-toggle.liquid %}
   </div>

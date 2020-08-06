@@ -21,7 +21,6 @@
       transition:
         max-height var(--transition);
       &.open {
-        overflow-y: scroll;
         max-height: var(--height);
       }
       ul {
@@ -29,7 +28,7 @@
       }
       a {
         text-decoration: none;
-        color: #000;
+        color: var(--color-text);
         display: block;
         padding: calc(.25rem * var(--line-height)) 0;
         @include hov() {
@@ -65,7 +64,7 @@
   }
   @media only screen and (min-width: 50em) {
     display: grid;
-    grid-template-columns: 15em auto;
+    grid-template-columns: 15em calc(100vw - 15em - .5rem);
     // column-gap: calc(1rem * var(--line-height));
     .nav-docs-wrap {
       padding: 0;
@@ -88,10 +87,11 @@
     .docs-content {
       --type-scale: 1.175;
       padding: calc(2rem * var(--line-height)) calc(2rem * var(--line-height));
+      width: 100%;
     }
   }
   @media only screen and (min-width: 90em) {
-    grid-template-columns: 15em calc(100vw - 25em - (2rem * var(--line-height))) 10em;
+    grid-template-columns: 15em calc(100vw - 25em - (2rem * var(--line-height)) - .5rem) 10em;
     .nav-page-wrap {
       -webkit-position: sticky;
       position: sticky;
@@ -105,7 +105,7 @@
       ol {
         list-style-type: none;
         a {
-          color: #000;
+          color: var(--color-text);
           text-decoration: none;
           display: block;
           padding: calc(.25rem * var(--line-height)) calc(.5rem * var(--line-height));

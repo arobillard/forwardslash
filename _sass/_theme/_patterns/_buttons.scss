@@ -1,5 +1,5 @@
 .btn,
-button {
+button:not(.no-btn) {
   background-color: var(--color-primary);
   color: #fff;
   text-decoration: none;
@@ -138,4 +138,16 @@ button + button {
 
 .btn.medium {
   @include typeScaleH5();
+}
+
+.no-btn {
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0;
+  &:hover {
+    cursor: pointer;
+  }
 }
