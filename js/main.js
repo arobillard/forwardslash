@@ -270,3 +270,25 @@ function restoreFromLocalStorage() {
     list.dispatchEvent(new CustomEvent('itemsUpdated'));
   }
 }
+
+// Forms
+
+const inputs = document.querySelectorAll('input:not([type="radio"]):not([type="checkbox"])');
+
+if (inputs.length > 0) {
+
+  inputs.forEach(input => {
+
+    input.addEventListener('input', evt => {
+      const value = input.value.trim()
+    
+      if (value) {
+        input.dataset.state = 'valid'
+      } else {
+        input.dataset.state = 'invalid'
+      }
+    })
+    
+  })
+
+}

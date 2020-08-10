@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 1.5625rem;
+  border-radius: 2rem;
   position: relative;
   transition: 
     background-color var(--transition),
@@ -11,16 +11,27 @@
     color var(--transition);
 
   .ctp-opener {
-    @include typeScaleH5;
+    @include typeScaleH4;
     padding: calc(.5rem * var(--line-height));
+    border-radius: 50%;
+    transition: 
+      background-color var(--transition),
+      color var(--transition),
+      box-shadow var(--transition);
+    @include hov() {
+      background-color: var(--color-secondary);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
   }
   .ctp-list {
     position: absolute;
     top: 0;
-    right: 0;
-    width: 100%;
-    padding: 4rem 0 calc(.5rem * var(--line-height));
-    border-radius: 1.5625rem;
+    left: 50%;
+    width: 75%;
+    transform: translateX(-50%);
+    padding: 4.5rem 0 calc(.5rem * var(--line-height));
+    border-radius: 2rem;
     list-style-type: none;
     text-align: center;
     background-color: #fff;
@@ -33,7 +44,7 @@
       opacity var(--transition);
     @include typeScaleSmall;
     li:not(:last-child) {
-      margin-bottom: calc(.25rem * var(--line-height));
+      margin-bottom: calc(.5rem * var(--line-height));
     }
     .active .ctp-circle::after {
       opacity: 1;
@@ -43,8 +54,8 @@
     }
     .ctp-circle {
       position: relative;
-      width: calc(.75rem * var(--line-height));
-      height: calc(.75rem * var(--line-height));
+      width: calc(.875rem * var(--line-height));
+      height: calc(.875rem * var(--line-height));
       border-radius: 50%;
       display: inline-block;
       &::after {
@@ -77,14 +88,20 @@
     }
   }
   @include hov() {
-    background-color: #fff;
-    color: var(--color-primary);
+  //   background-color: #fff;
+    background-color: var(--color-secondary);
   }
   &.open {
-    color: var(--color-primary);
-    @include hov() {
-      background-color: transparent;
+    .ctp-opener {
+      background-color: var(--color-secondary);
+      color: #fff;
+      box-shadow: var(--shadow);
     }
+    // color: var(--color-primary);
+      // background-color: var(--color-secondary);
+    // @include hov() {
+    //   background-color: transparent;
+    // }
     .ctp-list {
       clip-path: polygon(-10% -10%, 110% -10%, 100% 110%, -10% 110%);
     }
