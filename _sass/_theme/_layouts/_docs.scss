@@ -64,7 +64,7 @@
   }
   @media only screen and (min-width: 50em) {
     display: grid;
-    grid-template-columns: 15em calc(100vw - 15em - .5rem);
+    grid-template-columns: 15em 1fr;
     // column-gap: calc(1rem * var(--line-height));
     .nav-docs-wrap {
       padding: 0;
@@ -87,11 +87,14 @@
     .docs-content {
       --type-scale: 1.175;
       padding: calc(2rem * var(--line-height)) calc(2rem * var(--line-height));
-      width: 100%;
+      width: calc(100vw - 15em - (.5rem * var(--line-height)));
     }
   }
   @media only screen and (min-width: 90em) {
-    grid-template-columns: 15em calc(100vw - 25em - (2rem * var(--line-height)) - .5rem) 10em;
+    grid-template-columns: 15em 1fr 10em;
+    .docs-content {
+      width: calc(100vw - 25em - (.5rem * var(--line-height)));
+    }
     .nav-page-wrap {
       -webkit-position: sticky;
       position: sticky;

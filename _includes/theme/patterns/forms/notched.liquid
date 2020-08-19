@@ -1,4 +1,4 @@
-<div class="input-wrap input-notched{% if include.data.class %} {{ include.data.class }}{% endif %}">
+<div class="form-unit input-notched{% if include.data.class %} {{ include.data.class }}{% endif %}">
   <input id="{{ include.data.id | default: 'text-example' }}" name="{{ include.data.id | default: 'text-example' }}" type="{{ include.data.type | default: 'text' }}" pattern="\S+" required />
   <div class="notched-wrap">
     <div class="notched-pre"></div>

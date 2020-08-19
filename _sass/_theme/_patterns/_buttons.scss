@@ -151,3 +151,8 @@ button + button {
     cursor: pointer;
   }
 }
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+}

@@ -1,0 +1,4 @@
+<div class="form-unit radio-wrap{% if include.data.class %} {{ include.data.class }}{% endif %}">
+  <input id="{{ include.data.id | default: 'radio-example' }}" name="{{ include.data.name | default: 'radio-example' }}" type="radio" {% if include.data.checked %}checked {% endif %}/>
+  <label class="{{ include.data.labelClass | default: 'label-radio' }}" for="{{ include.data.id | default: 'radio-example' }}">{{ include.data.text | default: 'Radio' }}</label>
+</div>

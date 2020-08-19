@@ -1,0 +1,7 @@
+<div class="form-unit checkbox-wrap{% if include.data.class %} {{ include.data.class }}{% endif %}">
+  <div class="checkbox-input-wrap">
+    <input id="{{ include.data.id | default: 'checkbox-example' }}" name="{{ include.data.id | default: 'checkbox-example' }}" type="checkbox" />
+    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="none" stroke-miterlimit="10" stroke-width="35" d="M225.72 62.85l-130.3 130.3L30.27 128"/></svg>
+  </div>
+  <label class="{{ include.data.labelClass | default: 'label-checkbox' }}" for="{{ include.data.id | default: 'checkbox-example' }}">{{ include.data.text | default: 'Checkbox' }}</label>
+</div>

@@ -14,6 +14,7 @@
     color: var(--color-primary);
     max-width: 100%;
     overflow-x: scroll;
+    border-radius: 0 0 var(--radius) var(--radius);
   }
   code {
     display: block;

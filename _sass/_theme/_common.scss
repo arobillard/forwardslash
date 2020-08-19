@@ -21,8 +21,11 @@
   --type-scale: 1.175;
   --type-responsive-growth: 1;
 
-  /* Recurring Design */
+  /* Transition */
   --transition: .2s;
+  --snap: cubic-bezier(1,0,.75,1);
+  
+  /* Recurring Design */
   --radius: .25em;
   --shadow: 0px 2px 5px rgba(0, 0, 0, .15);
   --shadow-dark: 0px 2px 5px rgba(0, 0, 0, .25);

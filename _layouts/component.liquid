@@ -8,12 +8,15 @@ layout: docs
   </div>
   <div class="component-content-sections">
     {% for section in page.sections %}
-      <section class="component-content-section section-{{ section.type }} pad-t">
+      <section class="component-content-section section-{{ section.type }} pad-t-b-2">
         {% include theme/patterns/headings/linked.liquid text=section.title level=2 %}
         {{ section.description | markdownify }}
         {% if section.examples %}
           <div class="component-examples">
             <div class="output">
+              {% if section.startCode %}
+                {{ section.startCode }}
+              {% endif %}
               {% for example in section.examples %}
                 {% if example.width %}
                   <div style="max-width: {{ example.width }}rem;">
@@ -23,13 +26,12 @@ layout: docs
                   </div>
                 {% endif %}
               {% endfor %}
+              {% if section.endCode %}
+                {{ section.endCode }}
+              {% endif %}
             </div>
-            <pre class="code">
-              {%- for example in section.examples -%}
-                <code class="language-html click-to-copy" data-lang="html">{%- capture code -%}{%- include {{ example.component }} data=example -%}{%- endcapture -%}{{- code | replace:"<","&lt;" | replace:">","&gt;" -}}</code>
-              {%- endfor -%}
-            </pre>
-          </div>  
+            <pre class="code"><code class="language-html click-to-copy" data-lang="html">{%- if section.startCode -%}{{- section.startCode | replace:"<","&lt;" | replace:">","&gt;" -}}<div class="gutter">{%- endif -%}{%- for example in section.examples -%}{%- capture code -%}{%- include {{ example.component }} data=example -%}{%- endcapture -%}{{ code | replace:"<","&lt;" | replace:">","&gt;" }}<br>{%- endfor -%}{%- if section.endCode -%}</div>{{- section.endCode | replace:"<","&lt;" | replace:">","&gt;" -}}{%- endif -%}</code></pre>
+          </div>
         {% endif %}
       </section>
     {% endfor %}
