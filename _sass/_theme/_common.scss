@@ -111,7 +111,7 @@ html {
 }
 
 .click-to-copy {
-  position: relative;
+  // position: relative;
   &::after {
     content: 'content_copy';
     font-family: "Material Icons";

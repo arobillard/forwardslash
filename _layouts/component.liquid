@@ -30,7 +30,15 @@ layout: docs
                 {{ section.endCode }}
               {% endif %}
             </div>
-            <pre class="code"><code class="language-html click-to-copy" data-lang="html">{%- if section.startCode -%}{{- section.startCode | replace:"<","&lt;" | replace:">","&gt;" -}}<div class="gutter">{%- endif -%}{%- for example in section.examples -%}{%- capture code -%}{%- include {{ example.component }} data=example -%}{%- endcapture -%}{{ code | replace:"<","&lt;" | replace:">","&gt;" }}<br>{%- endfor -%}{%- if section.endCode -%}</div>{{- section.endCode | replace:"<","&lt;" | replace:">","&gt;" -}}{%- endif -%}</code></pre>
+            <pre class="code">
+              {%- if section.startCode -%}
+                <div class="relative"><code class="language-html click-to-copy" data-lang="html">{{- section.startCode | replace:"<","&lt;" | replace:">","&gt;" -}}<div class="gutter">{%- for example in section.examples -%}{%- capture code -%}{%- include {{ example.component }} data=example -%}{%- endcapture -%}{{ code | replace:"<","&lt;" | replace:">","&gt;" }}<br>{%- endfor -%}</div>{{- section.endCode | replace:"<","&lt;" | replace:">","&gt;" -}}</code></div>
+              {%- else -%}
+              {%- for example in section.examples -%}
+                <div class="relative"><code class="language-html click-to-copy" data-lang="html">{%- capture code -%}{%- include {{ example.component }} data=example -%}{%- endcapture -%}{{ code | replace:"<","&lt;" | replace:">","&gt;" }}</code></div>
+              {%- endfor -%}
+              {%- endif -%}
+            </pre>
           </div>
         {% endif %}
       </section>
