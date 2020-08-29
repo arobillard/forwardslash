@@ -1,5 +1,6 @@
 .btn,
-button:not(.no-btn) {
+button:not(.no-btn),
+.btn-group a {
   background-color: var(--color-primary);
   color: #fff;
   text-decoration: none;
@@ -19,6 +20,7 @@ button:not(.no-btn) {
     background-color: var(--color-primary-light);
     border-color: var(--color-primary-light);
     color: #fff;
+    outline-offset: 3px;
   }
 }
 
@@ -40,7 +42,9 @@ button + button {
   }
 }
 
-.btn.secondary {
+.btn.secondary,
+.btn-group.secondary a,
+.btn-group a.secondary {
   background-color: var(--color-secondary);
   border-color: var(--color-secondary);
   @include hov() {
@@ -60,7 +64,9 @@ button + button {
   }
 }
 
-.btn.accent-1 {
+.btn.accent-1, 
+.btn-group.accent-1 a,
+.btn-group a.accent-1 {
   background-color: var(--color-accent-1);
   border-color: var(--color-accent-1);
   @include hov() {
@@ -80,7 +86,9 @@ button + button {
   }
 }
 
-.btn.accent-2 {
+.btn.accent-2,
+.btn-group.accent-2 a,
+.btn-group a.accent-2 {
   background-color: var(--color-accent-2);
   border-color: var(--color-accent-2);
   @include hov() {
@@ -100,7 +108,9 @@ button + button {
   }
 }
 
-.btn.accent-3 {
+.btn.accent-3,
+.btn-group.accent-3 a,
+.btn-group a.accent-3 {
   background-color: var(--color-accent-3);
   border-color: var(--color-accent-3);
   @include hov() {
@@ -120,23 +130,37 @@ button + button {
   }
 }
 
-.btn.xxxlarge {
+.btn-group a.primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  @include hov() {
+    background-color: var(--color-primary-light);
+    border-color: var(--color-primary-light);
+  }
+}
+
+.btn.xxxlarge,
+.btn-group.xxxlarge a {
   @include typeScaleH1();
 }
 
-.btn.xxlarge {
+.btn.xxlarge,
+.btn-group.xxlarge a {
   @include typeScaleH2();
 }
 
-.btn.xlarge {
+.btn.xlarge,
+.btn-group.xlarge a {
   @include typeScaleH3();
 }
 
-.btn.large {
+.btn.large,
+.btn-group.large a {
   @include typeScaleH4();
 }
 
-.btn.medium {
+.btn.medium,
+.btn-group.medium a {
   @include typeScaleH5();
 }
 
@@ -155,4 +179,26 @@ button + button {
 .btn-icon {
   display: inline-flex;
   align-items: center;
+}
+
+.btn-group {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: inline-flex;
+  &.dividers a:not(:last-child)::after {
+    content: ' ';
+    width: 1px;
+    height: calc(100% + 4px);
+    background-color: rgba(255, 255, 255, .1);
+    position: absolute;
+    top: -2px;
+    right: -2.5px;
+    z-index: 1;
+  }
+  a {
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
+  }
 }

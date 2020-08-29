@@ -90,4 +90,38 @@ sections:
         text: Calendar
         class: accent-3 outline
         icon: calendar
+  - title: Button Group
+    type: examples
+    description: |-
+      Tempora ipsum debitis vitae repudiandae! Dolore provident molestias facere beatae pariatur est at vel sequi? Sint, labore at? Hic reiciendis ipsa labore? Tempora ipsum debitis vitae repudiandae! Dolore provident molestias facere beatae pariatur est at vel sequi? Sint, labore at? Hic reiciendis ipsa labore?
+    examples:
+      - component: theme/patterns/buttons/button-group.liquid
+        dividers: true
+        class: primary
+        btns:
+          - text: Left
+            link: '#'
+          - text: Middle
+            link: '#'
+          - text: Right
+            link: '#'
+  - title: Icon Button Group
+    type: examples
+    description: |-
+      Tempora ipsum debitis vitae repudiandae! Dolore provident molestias facere beatae pariatur est at vel sequi? Sint, labore at? Hic reiciendis ipsa labore? Tempora ipsum debitis vitae repudiandae! Dolore provident molestias facere beatae pariatur est at vel sequi? Sint, labore at? Hic reiciendis ipsa labore?
+    examples:
+      - component: theme/patterns/buttons/button-group-icon.liquid
+        class: primary
+        btns:
+          - text: Facebook
+            icon: facebook
+            link: '#'
+          - text: Instagram
+            icon: instagram
+            link: '#'
+            class: secondary
+          - text: Twitter
+            icon: twitter
+            link: '#'
+            class: accent-3
 ---

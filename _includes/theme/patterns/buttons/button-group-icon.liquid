@@ -1,0 +1,9 @@
+<div class="btn-group {{ include.data.class | default: 'secondary' | prepend: ' ' }}{% if include.data.dividers %} dividers{% endif %}">{% for btn in include.data.btns %}
+  <a class="{{ btn.class }}" href="{{ btn.link }}">
+    <i class="icon i-1 push-r-1-2">
+      <svg><use xlink:href="{{site.baseurl}}/images/icons.svg#{{ btn.icon | default: 'github' }}" /></svg>
+    </i>
+    <span class="icon-label">{{ btn.text | default: 'Icon Button' }}</span>
+  </a>
+{%- endfor %}
+</div>

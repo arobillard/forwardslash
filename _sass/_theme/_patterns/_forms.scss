@@ -3,7 +3,8 @@ input {
     border-color var(--transition);
 }
 
-input:not([type="radio"]) {
+input:not([type="radio"]),
+textarea {
   display: block;
   width: 100%;
   padding: calc(.5rem * var(--line-height)) calc(.5rem * var(--line-height));
@@ -11,13 +12,19 @@ input:not([type="radio"]) {
   @include typeScaleSmall;
   border-radius: var(--radius);
   border: 2px solid var(--color-primary);
+  color: var(--color-text);
+}
+
+textarea {
+  height: calc((1rem * var(--line-height) * 3) + (1rem * var(--line-height)));
 }
 
 .input-notched {
   position: relative;
-  input:not([type="radio"]):not([type="checkbox"]) {
+  input:not([type="radio"]):not([type="checkbox"]), textarea {
     border: 0;
     outline: none;
+    resize: none;
   }
   .notched-wrap {
     position: absolute;
@@ -45,6 +52,7 @@ input:not([type="radio"]) {
         width: 100%;
         transition:
           font-size var(--transition),
+          transform var(--transition),
           top var(--transition),
           color var(--transition);
       }
@@ -56,8 +64,14 @@ input:not([type="radio"]) {
       border-radius: 0 var(--radius) var(--radius) 0;
     }
   }
+  textarea + .notched-wrap .notched-label label {
+    top: calc(.25rem * var(--line-height));
+    transform: translateY(0);
+  }
   input:focus + .notched-wrap,
-  input[data-state="valid"] + .notched-wrap {
+  textarea:focus + .notched-wrap,
+  input[data-state="valid"] + .notched-wrap,
+  textarea[data-state="valid"] + .notched-wrap {
     .notched-pre,
     .notched-post,
     .notched-label {
@@ -67,6 +81,7 @@ input:not([type="radio"]) {
       border-top: 0;
       label {
         top: 0;
+        transform: translateY(-50%);
         color: var(--color-secondary);
         @include typeScaleExtraSmall;
       }

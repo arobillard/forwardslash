@@ -15,6 +15,12 @@
     max-width: 100%;
     border-radius: 0 0 var(--radius) var(--radius);
   }
+  .code-snippet-wrap {
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: calc(.5rem * var(--line-height))
+    }
+  }
   code {
     display: block;
     width: 100%;

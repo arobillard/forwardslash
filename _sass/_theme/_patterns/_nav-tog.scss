@@ -5,6 +5,9 @@
   flex-direction: column;
   justify-content: space-between;
   position: relative;
+  &:focus {
+    outline: 0;
+  }
   .tog {
     width: 100%;
     height: calc(1rem / 5 * var(--type-responsive-growth));

@@ -4,13 +4,13 @@ title: Forms
 intro: |-
   Tempora ipsum debitis vitae repudiandae! Dolore provident molestias facere beatae pariatur est at vel sequi? Sint, labore at? Hic reiciendis ipsa labore?
 sections:
-  - title: Basic Input
+  - title: Input - Basic
     type: examples
     description: |-
       Tempora ipsum debitis vitae repudiandae! Dolore provident molestias facere beatae pariatur est at vel sequi? Sint, labore at? Hic reiciendis ipsa labore? Tempora ipsum debitis vitae repudiandae! Dolore provident molestias facere beatae pariatur est at vel sequi? Sint, labore at? Hic reiciendis ipsa labore?
     examples:
       - component: theme/patterns/forms/basic.liquid
-  - title: Notched Input
+  - title: Input - Notched
     type: examples
     description: |-
       Tempora ipsum debitis vitae repudiandae! Dolore provident molestias facere beatae pariatur est at vel sequi? Sint, labore at? Hic reiciendis ipsa labore? Tempora ipsum debitis vitae repudiandae! Dolore provident molestias facere beatae pariatur est at vel sequi? Sint, labore at? Hic reiciendis ipsa labore?
@@ -71,4 +71,18 @@ sections:
         class: secondary
         id: radio-example-2
         text: Radio 2
+  - title: Textarea - Basic
+    type: examples
+    description: |-
+      Tempora ipsum debitis vitae repudiandae! Dolore provident molestias facere beatae pariatur est at vel sequi? Sint, labore at? Hic reiciendis ipsa labore? Tempora ipsum debitis vitae repudiandae! Dolore provident molestias facere beatae pariatur est at vel sequi? Sint, labore at? Hic reiciendis ipsa labore?
+    examples:
+      - component: theme/patterns/forms/textarea.liquid
+        text: Message
+  - title: Textarea - Notched
+    type: examples
+    description: |-
+      Tempora ipsum debitis vitae repudiandae! Dolore provident molestias facere beatae pariatur est at vel sequi? Sint, labore at? Hic reiciendis ipsa labore? Tempora ipsum debitis vitae repudiandae! Dolore provident molestias facere beatae pariatur est at vel sequi? Sint, labore at? Hic reiciendis ipsa labore?
+    examples:
+      - component: theme/patterns/forms/textarea-notched.liquid
+        text: Message
 ---

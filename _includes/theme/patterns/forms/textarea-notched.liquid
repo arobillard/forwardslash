@@ -1,0 +1,10 @@
+<div class="form-unit input-notched{% if include.data.class %} {{ include.data.class }}{% endif %}">
+  <textarea id="{{ include.data.id | default: 'textarea-notched-example' }}" name="{{ include.data.id | default: 'textarea-notched-example' }}"></textarea>
+  <div class="notched-wrap">
+    <div class="notched-pre"></div>
+    <div class="notched-label">
+      <label class="{{ include.data.labelClass | default: 'label-basic' }}" for="{{ include.data.id | default: 'textarea-notched-example' }}">{{ include.data.text | default: 'Textarea' }}</label>
+    </div>
+    <div class="notched-post"></div>
+  </div>
+</div>

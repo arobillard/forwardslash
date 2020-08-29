@@ -1,0 +1,4 @@
+<div class="btn-group{{ include.data.class | default: 'secondary' | prepend: ' ' }}{% if include.data.dividers %} dividers{% endif %}">{% for btn in include.data.btns %}
+  <a href="{{ btn.link }}">{{ btn.text }}</a>
+{%- endfor %}
+</div>

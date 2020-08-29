@@ -32,10 +32,10 @@ layout: docs
             </div>
             <pre class="code">
               {%- if section.startCode -%}
-                <div class="relative"><code class="language-html click-to-copy" data-lang="html">{{- section.startCode | replace:"<","&lt;" | replace:">","&gt;" -}}<div class="gutter">{%- for example in section.examples -%}{%- capture code -%}{%- include {{ example.component }} data=example -%}{%- endcapture -%}{{ code | replace:"<","&lt;" | replace:">","&gt;" }}<br>{%- endfor -%}</div>{{- section.endCode | replace:"<","&lt;" | replace:">","&gt;" -}}</code></div>
+                <div class="code-snippet-wrap"><code class="language-html click-to-copy" data-lang="html">{{- section.startCode | replace:"<","&lt;" | replace:">","&gt;" -}}<div class="gutter">{%- for example in section.examples -%}{%- capture code -%}{%- include {{ example.component }} data=example -%}{%- endcapture -%}{{ code | replace:"<","&lt;" | replace:">","&gt;" }}<br>{%- endfor -%}</div>{{- section.endCode | replace:"<","&lt;" | replace:">","&gt;" -}}</code></div>
               {%- else -%}
               {%- for example in section.examples -%}
-                <div class="relative"><code class="language-html click-to-copy" data-lang="html">{%- capture code -%}{%- include {{ example.component }} data=example -%}{%- endcapture -%}{{ code | replace:"<","&lt;" | replace:">","&gt;" }}</code></div>
+                <div class="code-snippet-wrap"><code class="language-html click-to-copy" data-lang="html">{%- capture code -%}{%- include {{ example.component }} data=example -%}{%- endcapture -%}{{ code | replace:"<","&lt;" | replace:">","&gt;" }}</code></div>
               {%- endfor -%}
               {%- endif -%}
             </pre>

@@ -1,0 +1,4 @@
+<div class="form-unit{% if include.data.class %} {{ include.data.class }}{% endif %}">
+  <label class="{{ include.data.labelClass | default: 'label-basic' }}" for="{{ include.data.id | default: 'textarea-example' }}">{{ include.data.text | default: 'Text Input' }}</label>
+  <textarea id="{{ include.data.id | default: 'textarea-example' }}" name="{{ include.data.id | default: 'textarea-example' }}" type="{{ include.data.type | default: 'text' }}"></textarea>
+</div>

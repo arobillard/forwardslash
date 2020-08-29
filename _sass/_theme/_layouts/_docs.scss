@@ -47,6 +47,7 @@
   }
   .docs-content {
     padding: calc(1rem * var(--line-height)) calc(1rem * var(--line-height));
+    grid-area: docs-content;
     h1 {
       color: var(--color-accent-3);
       // border-bottom: 1px solid var(--color-primary-pale);
@@ -65,8 +66,11 @@
   @media only screen and (min-width: 50em) {
     display: grid;
     grid-template-columns: 15em 1fr;
+    grid-template-areas:
+      "nav-docs docs-content";
     // column-gap: calc(1rem * var(--line-height));
     .nav-docs-wrap {
+      grid-area: nav-docs;
       padding: 0;
       .nav-docs ul {
         padding: 0;
@@ -92,12 +96,15 @@
   }
   @media only screen and (min-width: 90em) {
     grid-template-columns: 15em 1fr 10em;
+    grid-template-areas:
+      "nav-docs docs-content nav-page";
     .docs-content {
       width: calc(100vw - 25em - (.5rem * var(--line-height)));
     }
     .nav-page-wrap {
       -webkit-position: sticky;
       position: sticky;
+      grid-area: nav-page;
       top: 5rem;
       display: block;
       padding: calc(2rem * var(--line-height)) 0;
@@ -112,7 +119,7 @@
           text-decoration: none;
           display: block;
           padding: calc(.25rem * var(--line-height)) calc(.5rem * var(--line-height));
-          @include typeScaleSmall();
+          @include typeScaleSmall;
           @include hov() {
             color: var(--color-secondary);
           }
@@ -120,10 +127,18 @@
         .section-link a {
           font-weight: 600;
           padding: calc(.25rem * var(--line-height)) 0;
-          @include typeScaleBody();
+          @include typeScaleSmall();
         }
       }
     }
+  }
+  @media only screen and (min-width: 100em) {
+  
+    grid-template-columns: 15em 1fr 15em;
+    .docs-content {
+      width: calc(100vw - 30em - (.5rem * var(--line-height)));
+    }
+  
   }
 }
 

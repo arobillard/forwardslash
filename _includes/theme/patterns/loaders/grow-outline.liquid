@@ -1,0 +1,4 @@
+<div class="loader-circle-wrap">
+  <div class="loader-circle loader-grow-outline{{ include.data.color | default: 'secondary' | prepend: ' ' }}"></div>{% if include.data.double %}
+  <div class="loader-circle loader-grow-outline{{ include.data.color | default: 'secondary' | prepend: ' ' }} delayed"></div>{% endif %}
+</div>
