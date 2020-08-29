@@ -1,0 +1,7 @@
+<div class="switch-wrap">
+  <label class="switch" for="{{ include.data.id | default: "example-switch-basic" }}">
+    <span class="switch-label">{{ include.data.label | default: 'Basic Switch' }}</span>
+    <input id="{{ include.data.id | default: "example-switch-basic" }}" name="{{ include.data.id | default: "example-switch-basic" }}" type="checkbox">
+    <span class="switch-toggle"></span>
+  </label>
+</div>

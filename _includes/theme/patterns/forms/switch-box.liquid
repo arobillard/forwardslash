@@ -1,0 +1,10 @@
+<div class="switch-wrap">
+  <label class="switch" for="{{ include.data.id | default: "example-switch-box" }}">
+    <span class="switch-label">{{ include.data.label | default: 'Boxed Switch' }}</span>
+    <input id="{{ include.data.id | default: "example-switch-box" }}" name="{{ include.data.id | default: "example-switch-box" }}" type="checkbox">
+    <div class="switch-toggle-box">
+      <span>{{ include.data.off | default: "Off" }}</span>
+      <span>{{ include.data.on | default: "On" }}</span>
+    </div>
+  </label>
+</div>
