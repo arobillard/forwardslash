@@ -278,7 +278,7 @@ legend {
         top: 2px;
         left: 2px;
         transform: none;
-        width: calc(50% - 2px);
+        width: calc(50% - 4px);
         height: calc(100% - 4px);
         background-color: #ccc;
         border-radius: calc(var(--radius) / 2);
@@ -294,9 +294,14 @@ legend {
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        @include typeScaleSmall;
+        text-transform: uppercase;
+        font-weight: 600;
         position: relative;
         color: #ccc;
         transition:
+          transform var(--transition),
+          opacity var(--transition),
           color var(--transition);
         &:first-child {
           color: #fff
@@ -327,6 +332,27 @@ legend {
       // }
       .switch-toggle::after {
         box-shadow: 0px 0px 10px var(--color-secondary);
+      }
+      .switch-toggle-box {
+        &::before {
+          // box-shadow: 0px 0px 10px var(--color-secondary);
+          left: .5rem;
+        }
+        span:first-child {
+          transform: translateX(.5rem);
+        }
+      }
+      input[type="checkbox"]:checked + .switch-toggle-box {
+        &::before {
+          // box-shadow: 0px 0px 10px var(--color-secondary);
+          transform: translateX(calc(-100% - 2px - .5rem));
+        }
+        span:first-child {
+          transform: none;
+        }
+        span:last-child {
+          transform: translateX(-.5rem);
+        }
       }
     }
   }

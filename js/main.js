@@ -3,6 +3,7 @@ import { clickToCopy, isVisible, smoothScroll } from './utils.js';
 import { handleNavToggle } from './components/nav-toggle.js';
 import { handleThemeSelector, setCTOnLoad } from './components/color-theme-picker.js';
 import createNavPage from './components/nav-page.js';
+import './components/tabs.js';
 
 // Nav Toggle
 

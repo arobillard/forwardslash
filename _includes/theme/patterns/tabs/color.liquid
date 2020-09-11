@@ -1,0 +1,12 @@
+<div class="tab-wrap tabs-colored">{% assign tabTotal = 0 %}{% for tab in include.data.tabs %}{% capture tabTotal %}{{ tabTotal | plus: 1 }}{% endcapture %}{% endfor %}{% assign tabNum = 1 %}
+  <div class="tabs tab-columns-{{ tabTotal }}">{% for tab in include.data.tabs %}
+    <a href="#{{ tab.title | slugify }}" class="tab{% if tabNum == 1 %} active{% endif %}" data-tab="{{ tabNum }}">{{ tab.title }}</a>{% capture tabNum %}{{ tabNum | plus: 1 }}{% endcapture %}
+    {%- endfor %}
+  </div>{% assign tabNum = 1 %}
+  <div class="tabs-content">{% for tab in include.data.tabs %}
+    <div id="{{ tab.title | slugify }}" class="tab-content{% if tabNum == 1 %} ready active{% endif %}" data-tab="{{ tabNum }}">
+      {{ tab.content | markdownify }}
+    </div>{% capture tabNum %}{{ tabNum | plus: 1 }}{% endcapture %}
+    {%- endfor %}
+  </div>
+</div>

@@ -16,7 +16,7 @@ sections:
         text: Sint, labore at? Hic reiciendis ipsa labore? Tempora ipsum debitis vitae repudiandae!
         btn:
           text: Cute doggo!
-          url: doggos.com
+          url: '#'
           class: secondary
   - title: Full Card Link
     type: examples
@@ -31,6 +31,6 @@ sections:
         class: full-link
         btn:
           text: Cute doggo!
-          url: doggos.com
+          url: '#'
           class: secondary
 ---
